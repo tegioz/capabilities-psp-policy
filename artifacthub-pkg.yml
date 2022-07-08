@@ -1,0 +1,31 @@
+# Artifact Hub package metadata file
+version: 0.1.9
+name: capabilities-psp
+displayName: Capabilities PSP
+createdAt: 2022-07-05T00:00:00Z
+description: A Pod Security Policy that controls Container Capabilities
+license: Apache-2.0
+homeURL: https://github.com/kubewarden/capabilities-psp-policy
+containersImages:
+  - name: policy
+    image: ghcr.io/kubewarden/policies/capabilities-psp:v0.1.9
+keywords:
+  - psp
+  - container
+  - capability
+  - capabilities
+links:
+  - name: policy
+    url: https://github.com/kubewarden/capabilities-psp-policy/releases/download/v0.1.9/policy.wasm
+  - name: source
+    url: https://github.com/kubewarden/capabilities-psp-policy
+changes:
+  - kind: added
+    description: Policy is now signed via Sigstore
+provider:
+  name: Kubewarden
+recommendations:
+  - url: https://artifacthub.io/packages/helm/kubewarden/kubewarden-controller
+annotations:
+  kubewarden/resources: "Pod" # Comma separated
+  kubewarden/mutation: "true"
